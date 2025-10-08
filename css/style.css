@@ -652,6 +652,7 @@ a:focus-visible {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: stretch;
   margin-top: 2.5rem;
 }
 
@@ -660,10 +661,35 @@ a:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(12, 24, 18, 0.78);
   padding: 2rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
   text-align: center;
-  min-height: 180px;
+}
+
+.sponsor-card__media {
+  width: min(100%, 220px);
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: rgba(12, 24, 18, 0.85);
+  border: 1px solid rgba(239, 179, 68, 0.32);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+.sponsor-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 显示完整图像，不裁剪 */
+}
+
+.sponsor-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: rgba(10, 20, 15, 0.95);
 }
 
 .sponsor-card__label {
@@ -673,17 +699,24 @@ a:focus-visible {
   color: rgba(255, 255, 255, 0.58);
 }
 
+.sponsor-card__caption {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.5;
+}
+
 .sponsor-card--cta {
   background: linear-gradient(135deg, rgba(239, 179, 68, 0.22), rgba(29, 72, 45, 0.65));
   border-color: rgba(239, 179, 68, 0.38);
-  align-content: center;
+  align-items: center;
 }
 
 .sponsor-card--cta h3 {
   font-family: "Orbitron", "Inter", sans-serif;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .contact-grid {
