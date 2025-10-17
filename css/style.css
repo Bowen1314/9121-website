@@ -36,6 +36,14 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -178,10 +186,36 @@ a:focus-visible {
 .hero-background {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(29, 72, 45, 0.55), transparent 45%),
-    radial-gradient(circle at bottom right, rgba(239, 179, 68, 0.45), transparent 40%),
-    radial-gradient(circle at center, rgba(19, 47, 31, 0.65), rgba(10, 20, 15, 0.95) 70%);
+  background: #000000;
+  overflow: hidden;
   z-index: -2;
+}
+
+.hero-background__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background__outer-vignette,
+.hero-background__center-vignette,
+.hero-background__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-background__scrim {
+  background: linear-gradient(180deg, rgba(0, 8, 4, 0.4), rgba(0, 12, 6, 0.6));
+  backdrop-filter: blur(1.5px);
+}
+
+.hero-background__outer-vignette {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%);
+}
+
+.hero-background__center-vignette {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
 }
 
 .hero {
