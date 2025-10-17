@@ -396,7 +396,7 @@ a:focus-visible {
 }
 
 .section--dark {
-  background: linear-gradient(180deg, rgba(12, 24, 18, 0.96), rgba(6, 12, 9, 1));
+  background: linear-gradient(180deg, rgba(12, 24, 18, 0.55), rgba(6, 12, 9, 0.75));
 }
 
 .section__intro h2 {
